@@ -1,0 +1,15 @@
+<specification>
+	<chapter name="Backend" ID="01">
+		<req ID="0001" description="The backend shall provide an importer to import the csv export" rationale="The csv has the actual data from DKB" test="?" status="draft"></req></chapter>
+	<chapter name="Importer" ID="02">
+		<req ID="0001" description="The importer shall support csv, which exported from DKB" rationale="DKB export is available as csv and has the transfers" test="review" status="draft"></req>
+		<req ID="0002" description="" rationale="" test="" status=""></req>
+	</chapter>
+	<chapter name="Frontend" ID="03"></chapter>
+	<chapter name="View" ID="04">
+		<chapter ID="001" name="">
+			<req ID="" description="" rationale="" test="" status=""></req></chapter></chapter>
+	<chapter ID="05" name="APP">
+		<req description="The App shall store the data in xml files" ID="0001" rationale="" test="" status=""></req></chapter>
+	<chapter ID="06" name="build system">
+		<req ID="" description="" rationale="" test="" status=""></req></chapter></specification>

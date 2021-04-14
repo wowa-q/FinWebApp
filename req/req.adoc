@@ -1,0 +1,18 @@
+= Requirements
+== Backend
+[options="header",cols="1,1,1,1,1,1"]
+|===
+|ID   |Description   |Rationale   |Test   |Status   |Notes   
+//-------------------------------------------------
+|b_001   |The backend shall provide an importer to import the csv export   |The csv has the actual data from DKB   |?   |draft   |-   
+|b_002   |Row2B   |Row2C   |Row2D   |Row2E   |Row2F   
+|b_003   |Row3B   |Row3C   |Row3D   |Row3E   |Row3F   
+|b_004   |Row4B   |Row4C   |Row4D   |Row4E   |Row4F   
+|b_005   |Row5B   |Row5C   |Row5D   |Row5E   |Row5F   
+|b_006   |Row6B   |Row6C   |Row6D   |Row6E   |Row6F   
+|b_007   |Row7B   |Row7C   |Row7D   |Row7E   |Row7F   
+|b_008   |Row8B   |Row8C   |Row8D   |Row8E   |Row8F   
+|b_009   |Row9B   |Row9C   |Row9D   |Row9E   |Row9F   
+|b_010   |Row10B   |Row10C   |Row10D   |Row10E   |Row10F   
+|===
+
