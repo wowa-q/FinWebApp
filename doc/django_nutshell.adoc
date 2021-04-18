@@ -4,35 +4,6 @@
 
 * *<<docs.djangoproject.com/en/3.1/contents/, Docu>>*
 
-
-
-== Django folder structure
-
-=== Django project
-* *_djangoProjecName_*
-** *_djangoProjecName_*
-*** [blue]#init.py#
-*** [blue]#settings.py#: all project's configurations	
-*** [blue]#urls.py#: routes mapping within the project (https://docs.djangoproject.com/en/3.2/topics/http/urls/[doc] )
-*** [blue]#wsgi.py#: small gateway interface for deployment (https://docs.djangoproject.com/en/3.2/howto/deployment/wsgi/[doc])
-*** [blue]#asgi.py#: small gateway interface for deployment (https://docs.djangoproject.com/en/3.2/howto/deployment/asgi/[doc])
-** [blue]#manage.py#: Django command line utility (https://docs.djangoproject.com/en/3.2/ref/django-admin/[doc])
-** *_templates_*: Django template engine
-** *_static_*: Folder for static files, such as CSS, or Js etc.
-** *_APP_NAME_*: Folder created by creating a new App in the project. The name can be selected by creating new App.
-* *_VENV_NAME_*: Python virtual environment. The name can be selected by creating the virtual environment
-
-=== Django APP
-* *_migrations_*:
-* *_templates_*: folder contains web site templates of the App
-* *_static_*: similar to templates folder for App specific static files
-* [blue]#init.py#: tells Python to treat the directory as a Python package.
-* [blue]#admin.py#: contains settings for the Django admin pages.
-* [blue]#apps.py#: contains settings for the application configuration.
-* [blue]#models.py#: contains a series of classes that Djangos ORM converts to database tables.
-* [blue]#views.py#: contains functions and classes that handle what data is displayed in the HTML templates.
-* [blue]#tests.py#: contains test classes
-
 == Utilities
 === Create new Django project:
 [source]
@@ -81,6 +52,35 @@ to exit the shell use:
 ----
 exit()
 ----
+
+
+== Django folder structure
+
+=== Django project
+* *_djangoProjecName_*
+** *_djangoProjecName_*
+*** [blue]#init.py#
+*** [blue]#settings.py#: all project's configurations	
+*** [blue]#urls.py#: routes mapping within the project (https://docs.djangoproject.com/en/3.2/topics/http/urls/[doc] )
+*** [blue]#wsgi.py#: small gateway interface for deployment (https://docs.djangoproject.com/en/3.2/howto/deployment/wsgi/[doc])
+*** [blue]#asgi.py#: small gateway interface for deployment (https://docs.djangoproject.com/en/3.2/howto/deployment/asgi/[doc])
+** [blue]#manage.py#: Django command line utility (https://docs.djangoproject.com/en/3.2/ref/django-admin/[doc])
+** *_templates_*: Django template engine
+** *_static_*: Folder for static files, such as CSS, or Js etc.
+** *_APP_NAME_*: Folder created by creating a new App in the project. The name can be selected by creating new App.
+* *_VENV_NAME_*: Python virtual environment. The name can be selected by creating the virtual environment
+
+=== Django APP
+* *_migrations_*:
+* *_templates_*: folder contains web site templates of the App
+* *_static_*: similar to templates folder for App specific static files
+* [blue]#init.py#: tells Python to treat the directory as a Python package.
+* [blue]#admin.py#: contains settings for the Django admin pages.
+* [blue]#apps.py#: contains settings for the application configuration.
+* [blue]#models.py#: contains a series of classes that Djangos ORM converts to database tables.
+* [blue]#views.py#: contains functions and classes that handle what data is displayed in the HTML templates.
+* [blue]#tests.py#: contains test classes
+
 
 
 == Django project
@@ -188,27 +188,6 @@ The [blue]#{% static %}# template tag uses the [blue]#STATIC_URL# configuration 
 TIP: use the [blue]#{% static %}# whenever you need to refer to a *CSS*, *JavaScript* or *image* file
 
 
-== Testing
-The tests can be implemented in [blue]#tests.py# of the App.
-To executer the automated tests:
-[source]
-----
-python manage.py test
-----
-To see more test details:
-[source]
-----
-python manage.py test --verbosity=2
-----
-=== Server responce code
-[options="header",cols="1,1,1"]
-|===
-|Response code   |meaning   |Notes   
-//----------------------
-|200   |success   				| if everything is ok   
-|500   |internal server error   |error   
-|404   |page not found			|when the url was not found - check the _urlpatterns_ in project [blue]#urls.py#  
-|===
 
 
 == Admin interface
@@ -380,6 +359,27 @@ message = request.POST['message']
 The Forms APIs can be imported from `django.forms`. There are two types of Forms in Django: `forms.Form` and `forms.ModelForm`. `forms.ModelForm` is a subclass of `forms.Form` and is associated with the Model class.
 
 
+== Testing
+The tests can be implemented in [blue]#tests.py# of the App.
+To executer the automated tests:
+[source]
+----
+python manage.py test
+----
+To see more test details:
+[source]
+----
+python manage.py test --verbosity=2
+----
+=== Server responce code
+[options="header",cols="1,1,1"]
+|===
+|Response code   |meaning   |Notes   
+//----------------------
+|200   |success   				| if everything is ok   
+|500   |internal server error   |error   
+|404   |page not found			|when the url was not found - check the _urlpatterns_ in project [blue]#urls.py#  
+|===
 
 
 

@@ -7,9 +7,18 @@
 	</chapter>
 	<chapter name="Frontend" ID="03"></chapter>
 	<chapter name="View" ID="04">
-		<chapter ID="001" name="">
-			<req ID="" description="" rationale="" test="" status=""></req></chapter></chapter>
+		<chapter ID="001" name="Statistics view">
+			<req ID="" description="Die Ansicht soll für eine auf ein Zeitrahmen begrenzt werden können" rationale="" test="" status=""></req>
+			<req ID="" description='Es soll eine Ansicht "Graph" angeboten werden'></req>
+			<req ID="" description='Es soll eine Ansicht "Tabelle" angeboten werden'></req>
+			<req ID="" description='Es soll eine "Schnellansicht" abgeboten werden'></req>
+			<req ID="" description="Ansicht soll nach Kategory gefiltert werden können"></req>
+			<req ID="" description="Ansicht soll nach Tags gefiltert werden können"></req>
+			<req ID="" description="Ansicht soll Ausgaben nach Kategorien zeigen (Tortendiagramm)"></req>
+			<req ID="" description="Ansicht soll Ausgaben nach Tags zeigen (Tortendiagramm)"></req></chapter></chapter>
 	<chapter ID="05" name="APP">
-		<req description="The App shall store the data in xml files" ID="0001" rationale="" test="" status=""></req></chapter>
+		<req description="The App shall store the data in xml files" ID="0001" rationale="" test="" status=""></req>
+		<req ID="" description="Es soll ein Wizard angeboten werden, durch den eine Transaktion bedatet werden kann"></req>
+		<req ID="" description="Die Daten soll auf der Festplatte verkryptet abgelegt werden"></req></chapter>
 	<chapter ID="06" name="build system">
 		<req ID="" description="" rationale="" test="" status=""></req></chapter></specification>

@@ -1,4 +1,5 @@
 = Intro
+
 == Einstieg
 
 Die App soll auf dem Homeserver laufen.
@@ -28,16 +29,3 @@ xml with the following structure:
 **** _test:attribute_ how should the requirement be tested -> link to test
 **** _status:attribute_ requirement status [draft, ready, implemented, tested, released]
 
-== Info collection
-=== ascii dos
-https://asciidoc.org/asciidoc.css-embedded.html#_introduction
-
-=== python APIs und modules
-https://www.programcreek.com/python/index/module/list
-
-=== XML Parser
-https://docs.python.org/3/library/xml.etree.elementtree.html
-https://www.edureka.co/blog/python-xml-parser-tutorial/
-
-=== Django Extensions
-https://github.com/django-extensions/django-extensions

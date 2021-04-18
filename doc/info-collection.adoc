@@ -41,6 +41,9 @@ Django supports Object Relational Mapper (ORM) -> no SQL needed
 === ASCIIDOC
 <<docs.asciidoctor.org/asciidoc/latest/syntax-quick-reference/,Quick Reference>> 
 
+<<https://asciidoc.org/asciidoc.css-embedded.html#_introduction/,Introduction>> 
+
+
 ==== Tables
 [cols="1,1"]
 |===
@@ -62,3 +65,17 @@ puts "Hello, World!"
 === Fonts
 
 https://fonts.google.com/?preview.text=Django%20Boards&preview.text_type=custom[Google Fonts] 
+
+
+
+
+== Python
+=== Python APIs und modules
+https://www.programcreek.com/python/index/module/list
+
+=== XML Parser
+https://docs.python.org/3/library/xml.etree.elementtree.html
+https://www.edureka.co/blog/python-xml-parser-tutorial/
+
+=== Django Extensions
+https://github.com/django-extensions/django-extensions
