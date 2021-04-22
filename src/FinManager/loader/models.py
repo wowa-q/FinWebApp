@@ -2,7 +2,7 @@
 from django.utils import timezone
 from django.db import models
 import datetime
-import numpy as np
+#import numpy as np
 
 
 class Creditor(models.Model):
@@ -15,11 +15,12 @@ class Creditor(models.Model):
     ID                  = None  #TODO: make auto calculated
     name                = models.CharField(max_length=60)
     transactionCtr      = models.IntegerField(default=0)
+    #project             = models.ForeignKey(Project, on_delete=models.CASCADE)
+    #transactions        = models.ForeignKey(Transaction, on_delete=models.CASCADE)
     
     def unique(self, list1): 
         # intilize a null list
-        unique_list = []
-         
+        unique_list = []         
         # traverse for all elements
         for x in list1:
             # check if exists in unique_list or not
@@ -34,13 +35,13 @@ class Creditor(models.Model):
 class Transaction(models.Model):
 #https://docs.djangoproject.com/en/3.2/howto/custom-model-fields/
 #https://docs.djangoproject.com/en/3.2/ref/models/fields/#autofield
-    ID                  = None  #TODO: make auto calculated    
+    ID                  = models.IntegerField(default=0)  #TODO: make auto calculated    
     account             = models.CharField(max_length=24) # Konto
     direction           = models.BooleanField()  #TODO: choose type
-    date                = models.DateTimeField('date transacted')
-    id_commulated       = ID.String()+date.String()
+    pub_date            = models.DateTimeField('date transacted')
+    id_commulated       = str(ID)+str(pub_date)
     creditor            = models.ForeignKey(Creditor, on_delete=models.CASCADE)
-    creditor            = models.ForeignKey(Creditor, on_delete=models.CASCADE)
+    
     value               = models.CharField(max_length=10)
     verwendungszweck    = models.CharField(max_length=300) 
     textBooking         = models.CharField(max_length=300) # Buchungstext
@@ -51,8 +52,8 @@ class Transaction(models.Model):
     customerReference   = models.CharField(max_length=40) # Kundenreferenz
     
     category            = models.CharField(max_length=40)
-    types               = None #TODO: choose the right field
-    tags                = None #TODO: choose the right field    
+    types               = models.CharField(max_length=40) #TODO: choose the right field
+    tags                = models.CharField(max_length=40) #TODO: choose the right field    
     
     def was_received(self):
         return self.value > 0             
@@ -65,3 +66,17 @@ class Transaction(models.Model):
         return [self.ID, self.value, self.date]
 
 
+class Project(models.Model):
+    name            = models.CharField(max_length=60)
+    nrTransactions  = models.IntegerField(default=0)
+    firstTransact   = models.DateTimeField('pub_date')
+    lastTransact    = models.DateTimeField('pub_date')
+    dateCreated     = models.DateTimeField('pub_date')
+    dateUpdated     = models.DateTimeField('pub_date')
+    transactions    = models.ForeignKey(Transaction, on_delete=models.CASCADE)
+    
+    def update(self):
+        '''
+        update transaction properties view
+        '''
+        pass
