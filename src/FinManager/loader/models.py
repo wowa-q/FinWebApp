@@ -12,9 +12,10 @@ class Creditor(models.Model):
     # convert the set to the list
     unique_list = (list(list_set))
     '''
-    ID                  = None  #TODO: make auto calculated
-    name                = models.CharField(max_length=60)
+    creditorID          = models.IntegerField(default=0)  #TODO: make auto calculated
+    creditorName        = models.CharField(max_length=60)
     transactionCtr      = models.IntegerField(default=0)
+    
     #project             = models.ForeignKey(Project, on_delete=models.CASCADE)
     #transactions        = models.ForeignKey(Transaction, on_delete=models.CASCADE)
     
@@ -30,14 +31,15 @@ class Creditor(models.Model):
         #np.unique() needs to be installed first to use
         
     def __str__(self):
-        return self.name
-    
+        return self.nacreditorNameme
+ 
 class Transaction(models.Model):
 #https://docs.djangoproject.com/en/3.2/howto/custom-model-fields/
 #https://docs.djangoproject.com/en/3.2/ref/models/fields/#autofield
-    ID                  = models.IntegerField(default=0)  #TODO: make auto calculated    
+    transactionID       = models.IntegerField(default=0)  #TODO: make auto calculated    
     account             = models.CharField(max_length=24) # Konto
-    direction           = models.BooleanField()  #TODO: choose type
+    """
+    #direction           = models.BooleanField()  #TODO: choose type
     pub_date            = models.DateTimeField('date transacted')
     id_commulated       = str(ID)+str(pub_date)
     creditor            = models.ForeignKey(Creditor, on_delete=models.CASCADE)
@@ -64,10 +66,11 @@ class Transaction(models.Model):
     
     def __str__(self):
         return [self.ID, self.value, self.date]
-
+"""
 
 class Project(models.Model):
-    name            = models.CharField(max_length=60)
+    pjName            = models.CharField(max_length=60)
+    """
     nrTransactions  = models.IntegerField(default=0)
     firstTransact   = models.DateTimeField('pub_date')
     lastTransact    = models.DateTimeField('pub_date')
@@ -80,3 +83,4 @@ class Project(models.Model):
         update transaction properties view
         '''
         pass
+    """
