@@ -49,6 +49,11 @@
 . initial django project setup done
 . created new APP: loader
 . installed _loader_ APP
+. created superuser:
+.. User: wakl
+.. email: w.kloos@gmx.de
+.. 3panapo81
+. added loader to admin: Creditor
 . Design:
 .. use cases created
 ... statistics

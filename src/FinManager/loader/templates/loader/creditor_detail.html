@@ -23,6 +23,20 @@ https://docs.djangoproject.com/en/3.2/topics/templates/
         {% endfor %}
         </tbody>
     </table>
-	
+	<table class="table">
+        <tbody>
+        {% for creditor in transactions %}
+            <tr>
+            <th>{{ creditor.transactionID }}</th>
+            <th>{{ creditor.account }}</th>
+            
+            </tr>
+        {% empty %}
+            <div class="alert alert-danger">
+                There are no creditors yet.
+            </div>
+        {% endfor %}
+        </tbody>
+    </table>
 </div>
 
