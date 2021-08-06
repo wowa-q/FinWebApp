@@ -1,11 +1,13 @@
 
 import logging
 
-from django.http import HttpResponseRedirect
+from django.http import HttpResponseRedirect, HttpResponse
 from django.shortcuts import get_object_or_404, render
 from django.urls import reverse
 from django.utils import timezone
 from django.views import generic
+
+from src.FinManager.loader import models
 
 from .models import Project, Transaction, Creditor
 
@@ -13,6 +15,48 @@ from .models import Project, Transaction, Creditor
 logging.basicConfig(filename='test.log', level=logging.DEBUG,
                     format='%(asctime)s:%(levelname)s:%(message)s')
 # Create your views here.
+
+
+def testConnection(request):
+    return HttpResponse('This is connection test')
+
+
+def transaction(request, trans_slug):
+    transactions_list = [
+        {'data': '20.05.2020',
+         'slug': 'first-trans',
+         'value': 10,
+         'target': 'Beguenstigter',
+         'aim': 'nado'
+         },
+        {'data': '21.05.2020',
+         'slug': 'second-trans',
+         'value': 20,
+         'target': 'Beguenstigter',
+         'aim': 'nado'
+         }
+    ]
+    return render(request, 'loader/transaction.html', {'transaction': transactions_list})
+
+
+def transactions(request):
+    transactions_list = [
+        {'data': '20.05.2020',
+         'slug': 'first',
+         'value': 10,
+         'target': 'Beguenstigter',
+         'aim': 'nado'
+         },
+        {'data': '21.05.2020',
+         'slug': 'second',
+         'value': 20,
+         'target': 'Beguenstigter',
+         'aim': 'nado'
+         }
+    ]
+    # the dictionary can provide data which can be retrieved in the template by
+    # the dictionary key
+    return render(request, 'loader/home.html', {'transactions': transactions_list})
 
 
 def creditor_list(request):

@@ -81,3 +81,7 @@ https://www.edureka.co/blog/python-xml-parser-tutorial/
 
 === Django Extensions
 https://github.com/django-extensions/django-extensions
+
+= Web design
+== HTML
+https://www.html-seminar.de/einsteiger.htm

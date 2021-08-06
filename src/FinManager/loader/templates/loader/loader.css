@@ -1,0 +1,13 @@
+ul {
+	list-style: none;
+	padding: 0;
+}
+li {
+	display: inline-block;
+	color: white;
+	background-color:grey;
+	padding: 5px 10px;
+}
+h1 {
+	color:info;
+}

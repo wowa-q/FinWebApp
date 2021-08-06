@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="de">
+	<head>
+		<meta charset="UTF-8">
+		<title>loader part of FinWebApp</title>
+		<meta name="description" content="Kurzbeschreibung">
+		
+		
+		<link rel="stylesheet" href="loader.css">		
+		<!-- Bootstrap CSS -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+		
+	</head>
+	<body>
+	<!-- -->
+		<header> <p> Finance Manager web application </p> </header>
+		<!--
+		<nav>
+			 
+			<ul>
+			  <li><a href="#">Finance Manager</a></li>
+			  <li><a href="#">Statistics</a></li>
+			  <li><a href="#">Budgets</a></li>
+			  <li><a href="#">Settings</a></li>
+			</ul>
+			
+			
+		</nav> 
+		-->
+		<nav class="navbar navbar-expand-lg navbar-light bg-dark fixed-top">
+
+			
+			<a class="navbar-brand" href="#">
+				<img src="bilder/euro3.jpg" width="100" height="100" class="d-inline-block align-top"alt="">				
+			</a>
+			<!-- <a class="navbar-brand"  href="#">Finance Manager</a>  --> 
+			
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			
+			<div class="collapse navbar-collapse" id="navbarSupportedContent">
+				<div class="container">
+					<ul class="navbar-nav mr-auto">
+						<li class="nav-item active">
+							<a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+						</li>
+						<li class="nav-item dropdown">
+							<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+								Budgets
+							</a>
+							<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+								<a class="dropdown-item" href="#">Action</a>
+								<a class="dropdown-item" href="#">Another action</a>
+								<div class="dropdown-divider"></div>
+								<a class="dropdown-item" href="#">Something else here</a>
+							</div>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link disabled" href="#">Disabled</a>
+						</li>
+					</ul>
+				</div>
+				<form class="form-inline my-2 my-lg-0">
+					<input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+					<button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+				</form>
+			</div>
+			
+		</nav>
+		
+		<section>
+			<h1> Finance Manager Main page stylesheet </h1>
+			<!-- cooles feature um Hilfetexte zu hinterlegen -->
+			<details>
+			  <summary>Zusammenfassung Punkt 1</summary>
+			  <p>Hier kommt der ausführliche Inhalt zum Punkt 1</p>
+			</details>
+			<details>
+				<summary>mehr Informationen zu Punkt 2</summary>
+				<ul>
+					<li>Listen sind möglich</li>
+					<li>mit dem üblichen Aufbau</li>
+				</ul>
+				<p>wie auch jeder andere HTML-Code wie z.B. Bilder</p>
+				<img src="bilder/euro3.jpg">
+				<details open>
+					<summary>Aufklappbereiche innerhalb</summary>
+					<p>Inhalt des zweiten Aufklappbereichs</p>
+				</details>
+			</details>
+			<!-- Formulare -->
+			<details>
+				<summary>Text input & submit </summary>
+				<form action="index.html" method="post">
+					<!-- Text -->
+					<label for="nameFamilie">Ihr Familienname</label>
+					<input 	id="nameFamilie" tabindex="true" type="text" name="vorname" 
+							placeholder="gib hier was ein" value="" size="30" maxlength="50">
+					<input type="Submit" name="absenden" value="update">
+				</form>
+			</details>
+			<!-- Test -->
+			<details>
+				<summary> Test </summary>
+					<form id="detail_form" action="" method="post"> 
+				
+						<input type="text" name="familienname">
+						<input type="submit" value="absenden">
+					</form>
+				
+			</details>
+			
+			<form id="detail_form" action="" method="post"> 
+				<details>
+					<summary> Test II </summary>
+					<input type="text" name="familienname">
+					<input type="submit" value="absenden">
+				</details>
+				<details>					
+					<summary> Radio button</summary>
+					<input type="radio" name="anrede" value="w"> ich
+					<input type="radio" name="anrede" value="w"> er
+					<input type="radio" name="anrede" value="w"> du
+				</details>
+			</form>
+			
+				
+			
+			
+		</section>
+		<footer>
+		  <p>© <a href="">selber gemacht</a></p>
+		</footer>
+		
+	</body>
+</html>

@@ -20,6 +20,11 @@ class Creditor(models.Model):
     nameCredior = models.CharField(max_length=60)
     counter = models.IntegerField(default=0)
     project = models.ForeignKey(Project, on_delete=models.CASCADE)
+    slug = models.SlugField(unique=True)
+    # settings of MEDIA_ROOT and MEDIA_URL is needed + pillow package is
+    # needed, further it needs to be configured to serve the uploaded files
+    # then it can be used in the template: creditor.image.url
+    image = models.ImageField(upload_to='images')
 
     def unique(self, list1):
         # intilize a null list

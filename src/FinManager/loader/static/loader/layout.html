@@ -1,33 +1,25 @@
-
-<!-- enabling load of static files -->
-{% load static %}
-
-
-
-<!DOCTYPE html>
-<html lang="de">
-	<head>
-		<meta charset="UTF-8">
-		<title>Fin-Web-App-Statistics</title>
-		<meta name="description" content="Kurzbeschreibung">		
-		<!-- <link rel="stylesheet" href="navbar.css">		 -->
-		<!-- Bootstrap CSS 
-		https://getbootstrap.com/docs/4.0/components
-		-->
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-		<link rel="stylesheet" href="{% static 'loader/styles/navbar.css' %}">
+<!doctype html>
+<html lang="en">  
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
         <style>
             .FinApp-container {
                 margin: 80px
             }
         </style>
-	</head>
-	<body>
+        <title>Fin-Web-App-Layout</title>  
+    </head>
+  
+    <body>
         <!-- Container for nav-bar -->
         <div class="container">
             <nav class="navbar navbar-expand-lg navbar-light bg-dark fixed-top">			
                 <a class="navbar-brand" href="#">
-                    <img src="{% static 'loader/img/euro1.jpg' %}" width="50" height="50" class="d-inline-block align-top"alt="">	
+				    <img src="img/euro1.jpg" width="50" height="50" class="d-inline-block align-top"alt="">				
 			     </a>			
 			    <a class="navbar-brand"  href="#" id="brandtext" style="color: green;">Finance Manager</a>  
 			
@@ -107,12 +99,14 @@
                         </ol>
                         <div class="carousel-inner">
                             <div class="carousel-item active">
-                                <img class="d-block w-100" src="{% static 'loader/img/euro1.jpg' %}" alt="First slide">
+                                <img class="d-block w-100" src="img/euro1.jpg" alt="First slide">
                             </div>
                             <div class="carousel-item">
-                                <img class="d-block w-100" src="{% static 'loader/img/euro2.jpg' %}" alt="First slide">
+                                <img class="d-block w-100" src="img/euro2.jpg" alt="Second slide">
                             </div>
-                            
+                            <div class="carousel-item">
+                                <img class="d-block w-100" src="img/euro3.jpg" alt="Third slide">
+                            </div>
                         </div>
                         <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
                             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -177,41 +171,49 @@
                             <caption>Transactions</caption>
                             <thead>
                                 <tr class="table-primary">
-                                    <th scope="col">#</th>                  <!-- 1 -->
-                                    <th scope="col">ID</th>                 <!-- 2 -->
-                                    <th scope="col">Datum</th>              <!-- 3 -->
-                                    <th scope="col">Betrag</th>             <!-- 4 -->
-                                    <th scope="col">Beguenstigter</th>      <!-- 5 -->
-                                    <th scope="col">Verwendung</th>         <!-- 6 -->
-                                    <th scope="col">Edit</th>               <!-- 7 -->
+                                    <th scope="col">#</th>
+                                    <th scope="col">ID</th>
+                                    <th scope="col">Datum</th>
+                                    <th scope="col">Betrag</th>
+                                    <th scope="col">Beguenstigter</th>
+                                    <th scope="col">Verwendung</th>
+                                    <th scope="col">Edit</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                {% for transaction in transactions %}
                                 <tr>
                                     <td>1</td>
-                                    <td>{{ transaction.slug }}</td>
-                                    <td>{{ transaction.data }}</td>
-                                    <td>{{ transaction.value }}</td>
-                                    <td>{{ transaction.target }}</td>
-                                    <td>{{ transaction.aim }}</td>
-                                    
+                                    <td>2</td>
+                                    <td>3</td>
+                                    <td>4</td>
+                                    <td>5</td>
+                                    <td>6</td>
                                     <td>
-                                        <!-- 
-                                        <button type="button" class="btn btn-primary">
-                                            Edit
-                                        
-                                        </button>
-                                        
-                                        
-                                        <a href="/transaction/{{ transaction.slug }}" class="btn">Edit</a>
-                                        -->
-                                        <a href="{% url 'loader:transaction' transaction.slug %}" class="btn">Edit</a>
-                                        
+                                        <button type="button" class="btn btn-primary">Edit</button>
                                     </td>
                                 </tr>
-                                {% endfor %}
-                                
+                                <tr>
+                                    <td>1</td>
+                                    <td>2</td>
+                                    <td>3</td>
+                                    <td>4</td>
+                                    <td>5</td>
+                                    <td>6</td>
+                                    <td>
+                                        <button type="button" class="btn btn-primary">Edit</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>1</td>
+                                    <td>2</td>
+                                    <td>3</td>
+                                    <td>4</td>
+                                    <td>5</td>
+                                    <td>6</td>
+                                    <td>
+                                        <button type="button" class="btn btn-primary">Edit</button>
+                                    </td>
+                                </tr>
                             </tbody>
                         </table>
                     </div>

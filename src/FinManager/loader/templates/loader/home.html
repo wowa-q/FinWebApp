@@ -1,81 +1,15 @@
+{% extends 'loader/base.html' %}
 
-<!-- enabling load of static files -->
 {% load static %}
 
+{% block title%} Fin-Web-App-home  {% endblock %}
 
+{% block main_heading %} 
+Static Layout
+{% endblock %}
 
-<!DOCTYPE html>
-<html lang="de">
-	<head>
-		<meta charset="UTF-8">
-		<title>Fin-Web-App-Statistics</title>
-		<meta name="description" content="Kurzbeschreibung">		
-		<!-- <link rel="stylesheet" href="navbar.css">		 -->
-		<!-- Bootstrap CSS 
-		https://getbootstrap.com/docs/4.0/components
-		-->
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-		<link rel="stylesheet" href="{% static 'loader/styles/navbar.css' %}">
-        <style>
-            .FinApp-container {
-                margin: 80px
-            }
-        </style>
-	</head>
-	<body>
-        <!-- Container for nav-bar -->
-        <div class="container">
-            <nav class="navbar navbar-expand-lg navbar-light bg-dark fixed-top">			
-                <a class="navbar-brand" href="#">
-                    <img src="{% static 'loader/img/euro1.jpg' %}" width="50" height="50" class="d-inline-block align-top"alt="">	
-			     </a>			
-			    <a class="navbar-brand"  href="#" id="brandtext" style="color: green;">Finance Manager</a>  
-			
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-
-                <div class="collapse navbar-collapse" id="navbarSupportedContent" >
-                    <div class="container">
-                        <ul class="navbar-nav mr-auto">
-                            <li class="nav-item active">
-                                <a class="nav-link" style="color: green" id="menuHome" href="#">
-                                    Home<span class="sr-only">(current)</span>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" style="color: green" id="menuStatistics" href="#">
-                                    Statistics
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" style="color: green" id="menuBudgets" href="#">
-                                    Budgets
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" style="color: green" id="menuSettings" href="#">Settings</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" style="color: green" id="menuProfile" href="#">Profile</a>
-                            </li>
-                        </ul>					
-                    </div>
-                    <!--
-                    <form class="form-inline my-2 my-lg-0">
-                        <input class="form-control mr-sm-2" type="search" placeholder="not implemented" aria-label="Search">
-                        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-                    </form>
-                    -->
-                </div>			
-		    </nav>
-        </div>
-        <!-- Container for the page body -->
-        <div class="container-fluid FinApp-container">
-            <div class="row align-items-start">
-                <h1>Static Layout</h1> 
-            </div>
-            <div class="row align-items-start justify-contant-center">
+{% block main_body %}
+<div class="row align-items-start justify-contant-center">
                 <!-- column 1 -->
                 <div class="col-sm-1">
                     <h5>Here sidebar</h5>
@@ -172,49 +106,9 @@
                         </div>
                     </form>
                     <h2>Table transactions</h2>
-                    <div class="table-responsive">
-                        <table class="table table-striped">
-                            <caption>Transactions</caption>
-                            <thead>
-                                <tr class="table-primary">
-                                    <th scope="col">#</th>                  <!-- 1 -->
-                                    <th scope="col">ID</th>                 <!-- 2 -->
-                                    <th scope="col">Datum</th>              <!-- 3 -->
-                                    <th scope="col">Betrag</th>             <!-- 4 -->
-                                    <th scope="col">Beguenstigter</th>      <!-- 5 -->
-                                    <th scope="col">Verwendung</th>         <!-- 6 -->
-                                    <th scope="col">Edit</th>               <!-- 7 -->
-                                </tr>
-                            </thead>
-                            <tbody>
-                                {% for transaction in transactions %}
-                                <tr>
-                                    <td>1</td>
-                                    <td>{{ transaction.slug }}</td>
-                                    <td>{{ transaction.data }}</td>
-                                    <td>{{ transaction.value }}</td>
-                                    <td>{{ transaction.target }}</td>
-                                    <td>{{ transaction.aim }}</td>
-                                    
-                                    <td>
-                                        <!-- 
-                                        <button type="button" class="btn btn-primary">
-                                            Edit
-                                        
-                                        </button>
-                                        
-                                        
-                                        <a href="/transaction/{{ transaction.slug }}" class="btn">Edit</a>
-                                        -->
-                                        <a href="{% url 'loader:transaction' transaction.slug %}" class="btn">Edit</a>
-                                        
-                                    </td>
-                                </tr>
-                                {% endfor %}
-                                
-                            </tbody>
-                        </table>
-                    </div>
+                    
+                    {% include 'loader/includes/transactions_table.html' %}                    
+                    
                     <div>
                         <nav aria-label="...">
                             <ul class="pagination">
@@ -279,18 +173,4 @@
                     <button type="button" class="btn btn-primary">Update</button>
                 </div>
             </div>
-        </div>
-    
-        <!-- bootstrap js references -->
-        <div>             
-            <!-- Optional JavaScript -->    
-            <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-
-            <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-
-            <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-
-            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>  
-        </div>
-    </body>
-</html>
+{% endblock %}
