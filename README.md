@@ -1,2 +1,10 @@
 # FinWebApp
-my djan go learning project
+Folder structure:
+- doc
+- lib
+- src
+- test
+- req
+- tools
+- report
+- build
