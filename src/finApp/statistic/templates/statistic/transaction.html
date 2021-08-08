@@ -1,0 +1,61 @@
+{% extends 'statistic/base.html' %}
+
+
+{% load static %}
+
+{% block title%} Transaction  {% endblock %}
+
+{% block main_heading %} 
+    Transaction ID {{ transaction.slug }} on {{ transaction.date}} value {{ transaction.value }} from {{ transaction.account }}
+{% endblock %}
+
+
+
+{% block main_body %}
+<div class="container">
+    <div class="row">
+        <label  class="col-lg-2 ">Transaction Creditor: {{ transaction.customer }} </label>  
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col-sm-5">
+            <form>          
+                <div class="form-group row">            
+                    <label for="staticEmail" class="col-sm-2 col-form-label">Category</label>            
+                    <div class="col-sm-4">              
+                        <select class="form-control form-control-sm" id="tranactionCategory">                                            
+                            <option>Flex</option>                        
+                            <option>Fix</option>                                                  
+                        </select>             
+                    </div>          
+                </div>          
+                <div class="form-group row">            
+                    <label for="inputPassword" class="col-sm-2 col-form-label">Direction</label>            
+                    <div class="col-sm-4">              
+                        <select class="form-control form-control-sm" id="tranactionCategory">                                            
+                            <option>In</option>                        
+                            <option>Out</option>                                                  
+                        </select> 
+                    </div>          
+                </div>        
+            </form>
+        </div>
+        <div class="col-sm-6">
+            {% include 'statistic/includes/transaction_table.html' with transaction=transaction %}
+        </div>
+    </div>
+</div>
+<div class="ontainer">
+    <div class="row">
+        <div class="col-sm-4">                        
+
+        </div>
+        <div class="col-sm-6">    
+            <button type="submit" class="btn btn-primary mb-2">Back</button> 
+            <button type="submit" class="btn btn-primary mb-2">Next</button>                      
+        </div>
+    </div>
+</div>
+{% endblock %}
+

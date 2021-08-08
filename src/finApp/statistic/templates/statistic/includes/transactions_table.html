@@ -1,0 +1,31 @@
+<div class="table-responsive">
+    <table class="table table-striped">
+        <caption>MEINE Transactions</caption>
+        <thead>
+            <tr class="table-primary">
+                <th scope="col">#</th>                  <!-- 1 -->
+                <th scope="col">ID</th>                 <!-- 2 -->
+                <th scope="col">Datum</th>              <!-- 3 -->
+                <th scope="col">Betrag</th>             <!-- 4 -->
+                <th scope="col">Beguenstigter</th>      <!-- 5 -->
+                <th scope="col">Verwendung</th>         <!-- 6 -->
+                <th scope="col">Edit</th>               <!-- 7 -->
+            </tr>
+        </thead>
+        <tbody>
+            {% for transaction in transaction %}
+            <tr>
+                <td>1</td>
+                <td>{{ transaction.slug }}</td>
+                <td>{{ transaction.data }}</td>
+                <td>{{ transaction.value }}</td>
+                <td>{{ transaction.target }}</td>
+                <td>{{ transaction.aim }}</td>
+                <td>
+                    <a href="{% url 'statistic:transaction' transaction.slug %}" class="btn">Edit</a>
+                </td>                
+            </tr>            
+            {% endfor %}
+        </tbody>        
+    </table>
+</div>

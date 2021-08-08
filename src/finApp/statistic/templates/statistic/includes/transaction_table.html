@@ -1,0 +1,43 @@
+<div class="table-responsive">
+    <table class="table table-striped">
+        <caption>Transaction</caption>
+        <tbody>
+            <tr>
+                <td>Verwendungszweck</td>
+                <td>{{ transaction.purpose }}</td>                               
+            </tr>
+            <tr>
+                <td>Datum</td>
+                <td>{{ transaction.date }}</td>                               
+            </tr>
+            <tr>
+                <td>Konto</td>
+                <td>{{ transaction.customer_account }}</td>                               
+            </tr>
+            <tr>
+                <td>BLZ</td>
+                <td>{{ transaction.blz }}</td>                               
+            </tr>
+            <tr>
+                <td>Buchungstext</td>
+                <td>{{ transaction.transaction_text }}</td>                               
+            </tr>
+            <tr>
+                <td>Auftraggeber</td>
+                <td>{{ transaction.customer }}</td>                               
+            </tr>
+            <tr>
+                <td>Glaeubiger ID</td>
+                <td>{{ transaction.customer_id }}</td>                               
+            </tr>
+            <tr>
+                <td>Mandatsreferenz</td>
+                <td>{{ transaction.mandat_reference }}</td>                               
+            </tr>
+            <tr>
+                <td>Kundenreferenz</td>
+                <td>{{ transaction.customer_reference }}</td>                               
+            </tr>
+        </tbody>        
+    </table>
+</div>

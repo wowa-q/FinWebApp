@@ -5,14 +5,14 @@ app_name = 'statistic'
 urlpatterns = [
     # the name parameter can be used in django template to reference the url
     path('test/', views.testConnection),  # test view - to be deleted
-
+    path('home/', views.showHome, name='home'),
     # show statistics of the transactions
     #path('', views.transaction_list),
     # path('creditors/', views.creditor_list, name='creditors'),
 
     # path('transactions/', views.transactions, name='transactions'),
-    # path('transaction/<slug:trans_slug>',
-    #     views.transaction, name='transaction'),
+    path('transaction/<slug:slug>',
+         views.showTransaction, name='transaction'),
 
     # path('transactions/', views.transactions, name='statistics'),
     # path('transactions/', views.transactions, name='budget'),
