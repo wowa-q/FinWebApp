@@ -5,13 +5,13 @@ from django.template.context_processors import request
 
 # temporary list to be used instead of DB data
 transactions_list = [
-    {'data': '20.05.2020',
+    {'date': '20.05.2020',
      'slug': 'first-trans',
      'value': 10,
      'target': 'Beguenstigter',
      'aim': 'nado'
      },
-    {'data': '21.05.2020',
+    {'date': '21.05.2020',
      'slug': 'second-trans',
      'value': 20,
      'target': 'Beguenstigter',
