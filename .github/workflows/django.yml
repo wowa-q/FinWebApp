@@ -31,8 +31,7 @@ jobs:
     
     - name: Analysing the code with pylint
       run: |
-        find . -type f -name "*.py" | xargs pylint --disable=R0903
-       
+        pylint ../src/finApp/ --disable=R0903
     - name: Run Tests
       run: |
         python manage.py test
