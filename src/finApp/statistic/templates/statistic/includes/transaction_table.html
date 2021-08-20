@@ -1,0 +1,48 @@
+<div class="table-responsive">
+    <table class="table table-striped">
+        <caption>Transaction</caption>
+        <tbody>
+            <tr>
+                <td>Datum</td>
+                <td>{{ transaction.date }}</td>                               
+            </tr>
+            <tr>
+                <td>Konto</td>
+                <td>{{ transaction.account }}</td>                               
+            </tr>
+            <tr>
+                <td>Betrag</td>
+                <td>{{ transaction.value }}</td>                               
+            </tr>
+            <tr>
+                <td>Verwendungszweck</td>
+                <td>{{ transaction.aim }}</td>                               
+            </tr>
+            <tr>
+                <td>Buchungstext</td>
+                <td>{{ transaction.textBooking }}</td>                               
+            </tr>
+            <tr>
+                <td>Beguenstigter</td>
+                <td>{{ transaction.customer }}</td>                               
+            </tr>
+            <tr>
+                <td>BLZ</td>
+                <td>{{ transaction.blz }}</td>                               
+            </tr>
+            <tr>
+                <td>Kreditor ID</td>
+                <td>{{ transaction.creditorId }}</td>                               
+            </tr>
+            <tr>
+                <td>Mandatsreferenz</td>
+                <td>{{ transaction.mandat }}</td>                               
+            </tr>
+            <tr>
+                <td>Kundenreferenz</td>
+                <td>{{ transaction.customerReference }}</td>                               
+            </tr>
+            
+        </tbody>        
+    </table>
+</div>

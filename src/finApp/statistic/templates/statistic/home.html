@@ -1,0 +1,152 @@
+{% extends 'statistic/base.html' %}
+
+{% load static %}
+
+{% block title%} Fin-Web-App-home  {% endblock %}
+
+{% block main_heading %} 
+Static Layout
+{% endblock %}
+
+{% block main_body %}
+<div class="row align-items-start justify-contant-center">
+
+    <!-- column 1 -->
+    <div class="col-sm-1">
+        <h5>Here sidebar</h5>
+        <!-- -->
+        <ul class="nav flex-column fixed-left">
+            <li class="nav-item">
+                <a class="nav-link" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Statistics</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Budget</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Settings</a>
+            </li>
+        </ul>    
+    </div>
+    <!-- column 2 -->
+    <div class="col-sm-5">
+        <h2>Here place for the graph</h2>
+        <div id="carouselTransactionsControl" class="carousel slide" data-ride="carousel">
+            <ol class="carousel-indicators">
+                <li data-target="#carouselTransactionsControl" data-slide-to="0" class="active"></li>
+                <li data-target="#carouselTransactionsControl" data-slide-to="1"></li>
+                <li data-target="#carouselTransactionsControl" data-slide-to="2"></li>
+            </ol>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img class="d-block w-50" src="{% static 'statistic/img/ulka.jpg' %}" alt="First slide">
+                </div>
+                <div class="carousel-item">
+                    <img class="d-block w-50" src="{% static 'statistic/img/euro2.jpg' %}" alt="First slide">
+                </div>
+                <div class="carousel-item">
+                    <img class="d-block w-50" src="{% static 'statistic/img/euro3.jpg' %}" alt="First slide">
+                </div>
+            </div>
+            <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+    </div>
+    <!-- column 3 -->
+    <div class="col-sm-5">                    
+        
+        <!-- TODO: add NEXT & BACK buttons to switch forward or back -->                
+        <form>
+            <div class="row">
+                <div class="col">
+                    <label for="numberOfTransactionsFormControlSelect">Select number of transactions to show</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-3">
+                    <select class="form-control form-control-sm" id="numberOfTransactionsFormControlSelect">
+                        <option>10</option>
+                        <option>20</option>
+                        <option>50</option>
+                    </select>
+                </div>
+                <div class="col-sm-1">
+                    <button type="submit" class="btn btn-primary mb-2">Confirm</button>
+                </div>
+            </div>
+        </form>
+        <h2>Table transactions</h2>            
+        {% include 'statistic/includes/transactions_table.html' %}                                
+        <div>
+            <nav aria-label="...">
+                <ul class="pagination">
+                    <li class="page-item">
+                        <span class="page-link">Previous</span>
+                    </li>
+                    <li class="page-item"><a class="page-link" href="#">1</a></li>
+                    <li class="page-item active">
+                        <span class="page-link">
+                            2
+                            <span class="sr-only">(current)</span>
+                        </span>
+                    </li>
+                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                    <li class="page-item">
+                        <a class="page-link" href="#">Next</a>
+                    </li>
+                </ul>
+            </nav>                    
+        </div>
+    </div>
+</div>
+<div class="row align-items-start">
+    <div class="col-sm-1">
+        <!-- column 1 -->
+    </div>
+    <div class="col-sm-5">
+        <!-- column 2 -->
+        <!-- here buttons for category, classes, Tags, Beguenstigter, Konto, All, Update -->
+        <div class="custom-control custom-radio custom-control-inline">
+            <input type="radio" id="viewRadio_Category" name="viewPlotSelection" class="custom-control-input">
+            <label class="custom-control-label" for="viewRadio_Category">Category</label>
+        </div>
+        <div class="custom-control custom-radio custom-control-inline">
+            <input type="radio" id="viewRadio_Tags" name="viewPlotSelection" class="custom-control-input">
+            <label class="custom-control-label" for="viewRadio_Tags">Tags</label>
+        </div>
+        <div class="custom-control custom-radio custom-control-inline">
+            <input type="radio" id="viewRadio_Class" name="viewPlotSelection" class="custom-control-input">
+            <label class="custom-control-label" for="viewRadio_Class">Class</label>
+        </div>
+        <div class="custom-control custom-radio custom-control-inline">
+            <input type="radio" id="viewRadio_Konto" name="viewPlotSelection" class="custom-control-input">
+            <label class="custom-control-label" for="viewRadio_Konto">Konto</label>
+        </div>
+        <div class="custom-control custom-radio custom-control-inline">
+            <input type="radio" id="viewRadio_Beguesnt" name="viewPlotSelection" class="custom-control-input">
+            <label class="custom-control-label" for="viewRadio_Beguesnt">Beguenstigter</label>
+        </div>
+        <div class="custom-control custom-radio custom-control-inline">
+            <input type="radio" id="viewRadio_All" name="viewPlotSelection" class="custom-control-input">
+            <label class="custom-control-label" for="viewRadio_All">All</label>
+        </div>                    
+    </div>                
+</div>
+<div class="row align-items-start"> 
+    <!-- column 1 -->
+    <div class="col-sm-1">
+    </div>
+    <!-- column 2 -->
+    <div class="col-sm-5"> 
+        <button type="button" class="btn btn-primary">Update</button>
+    </div>
+</div>
+{% endblock %}
