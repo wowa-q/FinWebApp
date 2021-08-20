@@ -26,10 +26,8 @@ class Transaction(models.Model):
 
     # TODO: add validators for the slug
     # validators = [function 1, function 2]
-    '''
-    slug = models.SlugField(unique=True,
-                            primary_key=True,
-                            editable=False) '''
+    ''' '''
+    slug = models.SlugField(unique=True)
     # Konto
     account = models.CharField(max_length=24, default='')
     # Betrag
@@ -54,9 +52,6 @@ class Transaction(models.Model):
     # ForeignKey: one to many relation
     classification = models.ForeignKey(
         Classification, blank=True, null=True, on_delete=models.CASCADE)
-    '''
-    tags = models.ForeignKey(
-        Tags, on_delete=models.CASCADE) '''
     cathegory = models.ForeignKey(
         Category, blank=True, null=True, on_delete=models.CASCADE)
     tags = models.ManyToManyField(
@@ -74,4 +69,4 @@ class Transaction(models.Model):
     """
 
     def __str__(self):
-        return 'Transaction model'
+        return f'Transaction slug: {self.slug}'

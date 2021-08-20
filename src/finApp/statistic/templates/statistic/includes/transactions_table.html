@@ -3,8 +3,8 @@
         <caption>MEINE Transactions</caption>
         <thead>
             <tr class="table-primary">
-                <th scope="col">#</th>                  <!-- 1 -->
-                <th scope="col">ID</th>                 <!-- 2 -->
+                <th scope="col">ID</th>                 <!-- 1 -->
+                <th scope="col">Slug</th>               <!-- 2 -->
                 <th scope="col">Datum</th>              <!-- 3 -->
                 <th scope="col">Betrag</th>             <!-- 4 -->
                 <th scope="col">Beguenstigter</th>      <!-- 5 -->
@@ -13,13 +13,13 @@
             </tr>
         </thead>
         <tbody>
-            {% for transaction in transaction %}
+            {% for transaction in transactions %}
             <tr>
-                <td>1</td>
+                <td>{{ transaction.id }}</td>
                 <td>{{ transaction.slug }}</td>
                 <td>{{ transaction.date }}</td>
                 <td>{{ transaction.value }}</td>
-                <td>{{ transaction.target }}</td>
+                <td>{{ transaction.customer }}</td>
                 <td>{{ transaction.aim }}</td>
                 <td>
                     <a href="{% url 'statistic:transaction' transaction.slug %}" class="btn">Edit</a>

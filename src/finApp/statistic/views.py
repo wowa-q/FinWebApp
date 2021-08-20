@@ -1,23 +1,7 @@
 from django.http import HttpResponse
 from django.shortcuts import render
 from django.template.context_processors import request
-
-
-# temporary list to be used instead of DB data
-transactions_list = [
-    {'date': '20.05.2020',
-     'slug': 'first-trans',
-     'value': 10,
-     'target': 'Beguenstigter',
-     'aim': 'nado'
-     },
-    {'date': '21.05.2020',
-     'slug': 'second-trans',
-     'value': 20,
-     'target': 'Beguenstigter',
-     'aim': 'nado'
-     }
-]
+from .models import Transaction
 
 # Create your views here.
 
@@ -28,9 +12,14 @@ def testConnection(request):
 
 def showHome(request):
     # view to the main home page
-    return render(request, 'statistic/home.html', {'transaction': transactions_list})
+    transactions = Transaction.objects.all()
+    context = {
+        'transactions': Transaction.objects.all()
+    }
+    return render(request, 'statistic/home.html', context)
 
 
 def showTransaction(request, slug):
-    # view to show a single transaction
-    return render(request, 'statistic/transaction.html', {'transaction': transactions_list})
+    transaction = Transaction.objects.get(slug=slug)
+    print(transaction)
+    return render(request, 'statistic/transaction.html', {'transaction': transaction})
