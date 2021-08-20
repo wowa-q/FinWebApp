@@ -1,13 +1,17 @@
+'''
+@author: wakl8754
+@purpose: implementation of django urls for the App: finApp
+'''
 from django.urls import path
 from . import views
 
 app_name = 'statistic'
 urlpatterns = [
     # the name parameter can be used in django template to reference the url
-    path('test/', views.testConnection),  # test view - to be deleted
-    path('home/', views.showHome, name='home'),
+    path('test/', views.test_connection),  # test view - to be deleted
+    path('home/', views.show_home, name='home'),
     path('transaction/<slug:slug>',
-         views.showTransaction, name='transaction'),
+         views.show_transaction, name='transaction'),
 
     # path('', views.StatisticsView.as_view(), name='statistics'),
     # path('/<int:pk>/', views.DetailView.as_view(), name='detailed'),

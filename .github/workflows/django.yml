@@ -31,7 +31,7 @@ jobs:
     
     - name: Analysing the code with pylint
       run: |
-        find . -type f -name "*.py" | xargs pylint 
+        find . -type f -name "*.py" | xargs pylint --disable=R0903
        
     - name: Run Tests
       run: |

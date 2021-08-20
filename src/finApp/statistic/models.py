@@ -1,32 +1,45 @@
-from enum import unique
-
+'''
+@author: wakl8754
+@purpose: implementation of django models for the App: finApp
+'''
 from django.db import models
-from pip._internal import self_outdated_check
 
 
 class Classification(models.Model):
+    '''
+        Model to classify the transactions
+    '''
     klasse = models.CharField(max_length=40)
 
-    def __str__(self): return f'Class: {self.klasse}'
+    def __str__(self):
+        return f'Class: {self.klasse}'
 
 
 class Category(models.Model):
+    '''
+        Model for transaction categories
+    '''
     category = models.CharField(max_length=40)
 
-    def __str__(self): return f'Category: {self.category}'
+    def __str__(self):
+        return f'Category: {self.category}'
 
 
 class Tags(models.Model):
+    '''
+        Model for transaction tags
+    '''
     tag = models.CharField(max_length=40)
 
-    def __str__(self): return f'Tag: {self.tag}'
+    def __str__(self):
+        return f'Tag: {self.tag}'
 
 
 class Transaction(models.Model):
-
+    ''' Transaction model'''
     # TODO: add validators for the slug
     # validators = [function 1, function 2]
-    ''' '''
+
     slug = models.SlugField(unique=True)
     # Konto
     account = models.CharField(max_length=24, default='')
@@ -61,8 +74,7 @@ class Transaction(models.Model):
     #direction           = models.BooleanField()  #TODO: choose type
     id_commulated       = str(ID)+str(pub_date)
     def was_received(self):
-        return self.value > 0             
-    
+        return self.value > 0     
     def was_published_recently(self):
         now = timezone.now()
         return now - datetime.timedelta(days=1) <= self.pub_date <= now
